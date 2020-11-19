@@ -104,7 +104,7 @@ class Contact
     toString()
     {
         return "First Name : "+this.firstName+"\nLastName : "+this.lastName+"\nAddress : "+this.address+
-        "\nCity : "+this.city+"State : "+this.state+"\nZip : "+this.zip+"\nPhone : "+this.phoneNo+"\nEmail : "+this.email;
+        "\nCity : "+this.city+"\nState : "+this.state+"\nZip : "+this.zip+"\nPhone : "+this.phoneNo+"\nEmail : "+this.email;
     }
 }
 
@@ -155,6 +155,9 @@ try
     let totalContacts = addressBookArray.length;
     console.log("Total contacts in address book : "+totalContacts);
 
+    //Get contacts by city or state
+    console.log("Contacts by city or state : ")
+    addressBookArray.filter(contact => contact.city == "Mumbai"||contact.state == "Maharashtra").forEach(contact => console.log(contact.toString()+"\n"));
 }
 catch(e)
 {
