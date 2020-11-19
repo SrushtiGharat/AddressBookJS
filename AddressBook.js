@@ -109,8 +109,10 @@ class Contact
 
 try
 {
-    let contact = new Contact("Ram","Singh","2-GreenTower","Mumbai","Maharashtra","400500","91 7028827730","ram@gmail.com");
-    console.log(contact.toString());
+    let addressBookArray = new Array();
+    addressBookArray.push(new Contact("Ram","Singh","2-GreenTower","Mumbai","Maharashtra","400500","91 7028827730","ram@gmail.com"));
+    addressBookArray.push(new Contact("Seeta","Verma","3-TilakNagar","Ahmedabad","Gujarat","501302","91 9823439977","seeta@gmail.com"));
+    addressBookArray.forEach(contact => console.log(contact.toString()+"\n"));
 }
 catch(e)
 {
