@@ -153,7 +153,14 @@ try
 
     //Get total contacts
     let totalContacts = addressBookArray.length;
-    console.log("Total contacts in address book : "+totalContacts);
+    console.log("\nTotal contacts in address book : "+totalContacts);
+
+    //Search person by city or state
+    console.log("Search person by city or state : ")
+    contactIndex = addressBookArray.filter(contact => contact.city == "Mumbai"||contact.state == "Maharashtra").findIndex(c => c.firstName == "Ram" && c.lastName == "Singh");
+    if(contactIndex == -1)
+        throw "Contact not present";
+    console.log(addressBookArray[contactIndex].toString()+"\n");
 
     //Get contacts by city or state
     console.log("Contacts by city or state : ")
