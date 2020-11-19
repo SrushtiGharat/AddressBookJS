@@ -181,6 +181,20 @@ try
     let sortedByName = addressBookArray.slice(0).sort((c1,c2)=> c1.firstName.localeCompare(c2.firstName));
     sortedByName.forEach(contact => console.log(contact.toString()+"\n"));
 
+    //Sort by city
+    console.log("\nSorted by city");
+    let sortedByCity = addressBookArray.slice(0).sort((c1,c2)=> c1.city.localeCompare(c2.city));
+    sortedByCity.forEach(contact => console.log(contact.toString()+"\n"));
+
+    //Sort by state
+    console.log("\nSorted by stae");
+    let sortedByState = addressBookArray.slice(0).sort((c1,c2)=> c1.state.localeCompare(c2.state));
+    sortedByState.forEach(contact => console.log(contact.toString()+"\n"));
+
+    //Sort by zip
+    console.log("\nSorted by zip");
+    let sortedByZip = addressBookArray.slice(0).sort((c1,c2)=> c1.zip.localeCompare(c2.zip));
+    sortedByZip.forEach(contact => console.log(contact.toString()+"\n"));
 }
 catch(e)
 {
