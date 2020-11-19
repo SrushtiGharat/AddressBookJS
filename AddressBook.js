@@ -165,6 +165,17 @@ try
     //Get contacts by city or state
     console.log("Contacts by city or state : ")
     addressBookArray.filter(contact => contact.city == "Mumbai"||contact.state == "Maharashtra").forEach(contact => console.log(contact.toString()+"\n"));
+
+    //Count by city
+    console.log("Contacts by city :")
+    console.log("Mumbai : "+addressBookArray.filter(contact => contact.city == "Mumbai").length);
+    console.log("Bangalore : "+addressBookArray.filter(contact => contact.city == "Bangalore").length);
+
+    //Count by state
+    console.log("\nContacts by state :")
+    console.log("Maharashtra : "+addressBookArray.filter(contact => contact.state == "Maharashtra").length);
+    console.log("Karnataka : "+addressBookArray.filter(contact => contact.state == "Karnataka").length);
+
 }
 catch(e)
 {
