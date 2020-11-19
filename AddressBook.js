@@ -1,3 +1,4 @@
+//Contact class
 class Contact
 {
     get firstName(){return this._firstName;}
@@ -107,14 +108,24 @@ class Contact
     }
 }
 
+
 try
 {
+    //Adding contacts
     let addressBookArray = new Array();
     addressBookArray.push(new Contact("Ram","Singh","2-GreenTower","Mumbai","Maharashtra","400500","91 7028827730","ram@gmail.com"));
     addressBookArray.push(new Contact("Seeta","Verma","3-TilakNagar","Ahmedabad","Gujarat","501302","91 9823439977","seeta@gmail.com"));
     addressBookArray.forEach(contact => console.log(contact.toString()+"\n"));
+
+    //Edit contacts
+    let contactIndex = addressBookArray.findIndex(c => c.firstName == "Ram" && c.lastName == "Singh");
+    if(contactIndex == -1)
+        throw "Contact not present";
+    addressBookArray[contactIndex].phoneNo = "91 9130829963";
+    console.log("Contact editted successfully");
 }
 catch(e)
 {
     console.error(e);
 }
+
