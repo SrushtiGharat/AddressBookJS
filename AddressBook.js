@@ -136,6 +136,10 @@ try
     addressBookArray.splice(contactIndex,1);
     console.log("Contact deleted successfully");
 
+    //Get total contacts
+    let totalContacts = addressBookArray.length;
+    console.log("Total contacts in address book : "+totalContacts);
+
 }
 catch(e)
 {
