@@ -111,18 +111,31 @@ class Contact
 
 try
 {
+    let contactIndex = 0;
+
     //Adding contacts
     let addressBookArray = new Array();
     addressBookArray.push(new Contact("Ram","Singh","2-GreenTower","Mumbai","Maharashtra","400500","91 7028827730","ram@gmail.com"));
     addressBookArray.push(new Contact("Seeta","Verma","3-TilakNagar","Ahmedabad","Gujarat","501302","91 9823439977","seeta@gmail.com"));
+    addressBookArray.push(new Contact("Reeta","Yadav","Gokuldham","Bangalore","Karnataka","402306","91 8888823459","reeta@gmail.com"));
+    addressBookArray.push(new Contact("Shyam","Pandey","OrchidsColony","Mumbai","Maharashtra","400600","91 9234652738","shyam@gmail.com"));
+
     addressBookArray.forEach(contact => console.log(contact.toString()+"\n"));
 
     //Edit contacts
-    let contactIndex = addressBookArray.findIndex(c => c.firstName == "Ram" && c.lastName == "Singh");
+    contactIndex = addressBookArray.findIndex(c => c.firstName == "Ram" && c.lastName == "Singh");
     if(contactIndex == -1)
         throw "Contact not present";
     addressBookArray[contactIndex].phoneNo = "91 9130829963";
     console.log("Contact editted successfully");
+
+    //Delete contact
+    contactIndex = addressBookArray.findIndex(c => c.firstName == "Seeta" && c.lastName == "Verma");
+    if(contactIndex == -1)
+        throw "Contact not present";
+    addressBookArray.splice(contactIndex,1);
+    console.log("Contact deleted successfully");
+
 }
 catch(e)
 {
