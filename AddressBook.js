@@ -117,10 +117,10 @@ try
     let addressBookArray = new Array();
     
     Add(new Contact("Ram","Singh","2-GreenTower","Mumbai","Maharashtra","400500","91 7028827730","ram@gmail.com"));
+    Add(new Contact("Shyam","Pandey","OrchidsColony","Mumbai","Maharashtra","400600","91 9234652738","shyam@gmail.com"));
     Add(new Contact("Seeta","Verma","3-TilakNagar","Ahmedabad","Gujarat","501302","91 9823439977","seeta@gmail.com"));
     Add(new Contact("Reeta","Yadav","Gokuldham","Bangalore","Karnataka","402306","91 8888823459","reeta@gmail.com"));
-    Add(new Contact("Shyam","Pandey","OrchidsColony","Mumbai","Maharashtra","400600","91 9234652738","shyam@gmail.com"));
-
+    
     addressBookArray.forEach(contact => console.log(contact.toString()+"\n"));
 
     //Add Contacts function
@@ -175,6 +175,11 @@ try
     console.log("\nContacts by state :")
     console.log("Maharashtra : "+addressBookArray.filter(contact => contact.state == "Maharashtra").length);
     console.log("Karnataka : "+addressBookArray.filter(contact => contact.state == "Karnataka").length);
+
+    //Sort by name
+    console.log("\nSorted by name");
+    let sortedByName = addressBookArray.slice(0).sort((c1,c2)=> c1.firstName.localeCompare(c2.firstName));
+    sortedByName.forEach(contact => console.log(contact.toString()+"\n"));
 
 }
 catch(e)
